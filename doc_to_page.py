@@ -93,16 +93,8 @@ def add_toc(outdoc):
     cmd = f"gh-md-toc --insert --no-backup {outdoc}"
     subprocess.run(cmd, shell=True, check=True)
 
-    # When we added the TOC it inserted too much whitespace
     with open(outdoc) as f:
         toc = f.readlines()
-
-        for i, l in enumerate(toc):
-            if "<!--te-->" in l:
-                break
-            else:
-                toc[i] = l.replace("    *", "*", 1)
-
         toc.insert(toc.index("<!--ts-->\n"), "## Table of contents\n")  # Add TOC header
 
     with open(outdoc, "w") as f:

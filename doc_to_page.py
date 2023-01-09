@@ -10,8 +10,8 @@ import subprocess
 
 
 # NOTE: If you have added images, you MUST fix this mapping! Images in the Word
-# version are parsed by pandoc as "media/imageX.emf", where X matches the order
-# the images appear in the document. The mapping starts with image2.emf because
+# version are parsed by pandoc as "media/imageX.png", where X matches the order
+# the images appear in the document. The mapping starts with image2.png because
 # the first image is the ICCT logo which is automatically removed.
 IMG_MAP = {
 

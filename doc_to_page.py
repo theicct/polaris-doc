@@ -14,7 +14,7 @@ import subprocess
 # the images appear in the document. The mapping starts with image2.png because
 # the first image is the ICCT logo which is automatically removed.
 IMG_MAP = {
-
+    "media/image2.png": "/polaris-doc/assets/example_pic.png"
 }
 
 DOC_RAW = "documentation_raw.md"

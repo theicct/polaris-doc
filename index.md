@@ -6,11 +6,14 @@ layout: home
 title: Polaris Model Documentation
 ---
 
-The ICCT’s Polaris model is a global marine emissions model.
+The ICCT's Polaris model is a global maritime emissions projection model covering all ocean transport activity.
+
+It was first developed in 2022-23 by Gabe Alvarez, Sola Zheng, Francielle Carvalho, Jakob Schmidt, Erik Pronk, Bryan Comer, and Josh Miller.
+
 
 ## Versions
 
-Polaris is under continuing development. Documentation of all versions since v0.1.0 can be found here.
+Polaris is under continuing development. Documentation of all versions since v0.0.0 can be found here.
 
 {% assign pages = site.pages | sort: "title" | reverse %}
 {% for page in pages %}

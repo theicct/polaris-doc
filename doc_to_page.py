@@ -14,7 +14,9 @@ import subprocess
 # the images appear in the document. The mapping starts with image2.png because
 # the first image is the ICCT logo which is automatically removed.
 IMG_MAP = {
-    "media/image2.png": "/polaris-doc/assets/example_pic.png"
+    "media/image2.png": "/polaris-doc/assets/Fig1.png",
+    "media/image3.png": "/polaris-doc/assets/Fig2.png",
+    "media/image4.png": "/polaris-doc/assets/Fig3.png"
 }
 
 DOC_RAW = "documentation_raw.md"
@@ -37,9 +39,10 @@ def fix_headers(lines):
     for i, l in enumerate(lines):
         if l.startswith("#"):
             if l.startswith("# "):
-                words = l.lower().split()
-                words[1] = words[1].capitalize()  # Capitalize first non "#" word
-                l = " ".join(words)
+                if not ("EEDI" in l or "EEXI" in l or "CII" in l):  # leave policy acronyms in all caps
+                    words = l.lower().split()
+                    words[1] = words[1].capitalize()  # Capitalize first non "#" word
+                    l = " ".join(words)
 
             l = l.replace("#", "##", 1)  # Make headings one level lower
             lines[i] = l
@@ -124,6 +127,8 @@ def fix_math(doc):
             l = _fix_inline(l)
         l = l.replace(r"\[", r"$$")
         l = l.replace(r"\]", r"$$")  # display math
+
+        l = l.replace("\_}class", "_}class")  # we want to render "ship_class" with the underscore in equations
         doc[i] = l
 
     return doc

@@ -29,7 +29,7 @@
       - Edit the file path in _shared_version.sh_ to point to the Word version
       - If you added images in step 4, update the `IMG_MAP` in _doc_to_page.py_
       - Run the _copy_doc.sh_ bash script
-        - If you get a `/bin/sh: gh-md-toc: command not found` error, try reinitializing basher first with `export PATH="$HOME/.basher/bin:$PATH"` and `eval "$(basher init - zsh)"`
+        - If you get a `/bin/sh: gh-md-toc: command not found` error, try reinitializing [basher](https://github.com/basherpm/basher) first with `export PATH="$HOME/.basher/bin:$PATH"` and `eval "$(basher init - zsh)"`
 6. (Optional) Test your changes locally
    - First, temporarily remove all references to the `/polaris-doc` directory (it becomes the baseurl once served by GitHub) from the Markdown documentation file and the _config.yml file
    - run `jekyll serve`

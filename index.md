@@ -13,7 +13,7 @@ It was first developed in 2022-23 by Gabe Hillman Alvarez, Xinyi Sola Zheng, Fra
 
 ## Versions
 
-Polaris is under continuing development. Documentation of all versions since v0.0.0 can be found here.
+Polaris is under continuing development. Documentation of all versions since v1.0 can be found here.
 
 {% assign pages = site.pages | sort: "title" | reverse %}
 {% for page in pages %}
